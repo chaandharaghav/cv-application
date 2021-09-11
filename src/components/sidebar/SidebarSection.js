@@ -16,7 +16,7 @@ class SidebarSection extends react.Component {
         />
         <SectionItem
           itemName="mail"
-          itemValue="chaandharaghav.cb19@bitsathy.ac.in"
+          itemValue="big.ass.email@&#8203;address-is&#8203;.extremely.lame.de"
         />
         <SectionItem itemName="instagram" itemValue="@chaandharaghav" />
       </div>

@@ -1,5 +1,6 @@
 #header {
-  margin: 7rem 4rem;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
 }
 
 #name,
@@ -21,6 +22,8 @@
 }
 
 #role {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(91, 167, 209);
   letter-spacing: 3px;
 }

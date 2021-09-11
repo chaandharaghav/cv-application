@@ -11,6 +11,10 @@
   border-right: 1px solid grey;
 }
 
+#preview-div {
+  min-height: 100vh;
+}
+
 #form-div,
 #preview-div {
   width: 50vw;

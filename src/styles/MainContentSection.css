@@ -1,0 +1,24 @@
+.main-content-section {
+  margin-bottom: 3rem;
+}
+
+.main-content-section h2 {
+  color: rgb(91, 167, 209);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.role,
+li,
+p {
+  color: rgb(69, 69, 65);
+}
+
+.position {
+  color: rgb(170, 170, 168);
+}
+
+ul {
+  padding-left: 1.2rem;
+}

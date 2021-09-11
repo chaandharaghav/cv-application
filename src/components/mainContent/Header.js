@@ -7,7 +7,7 @@ class Header extends react.Component {
   render() {
     return (
       <div id="header">
-        <p id="name">{this.props.name}</p>
+        <h1 id="name">{this.props.name}</h1>
         <hr className="small-hr" />
         <p id="role">{this.props.role}</p>
       </div>

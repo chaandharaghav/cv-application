@@ -1,0 +1,7 @@
+#display-picture {
+  width: 60%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+  margin: 4rem 0;
+}

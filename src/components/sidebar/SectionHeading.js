@@ -1,7 +1,7 @@
 import react from 'react';
 
 // importing styles
-import './SidebarSection.css';
+import '../../styles/SectionHeading.css';
 
 class SectionHeading extends react.Component {
   render() {

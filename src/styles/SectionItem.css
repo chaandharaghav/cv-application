@@ -1,15 +1,3 @@
-.sidebar-section {
-  width: 80%;
-  color: white;
-
-  margin-bottom: 2rem;
-}
-
-.sidebar-heading {
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-}
-
 .section-item {
   display: flex;
 

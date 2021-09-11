@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-.App {
+.App,
+#preview-div {
   display: flex;
 }
 

@@ -3,7 +3,7 @@ import SectionHeading from './SectionHeading';
 import SectionItem from './SectionItem';
 
 // importing styles
-import './SidebarSection.css';
+import '../../styles/SidebarSection.css';
 
 class SidebarSection extends react.Component {
   render() {

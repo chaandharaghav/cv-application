@@ -1,5 +1,8 @@
 import react from 'react';
 
+// importing styles
+import '../../styles/DisplayPicture.css';
+
 class DisplayPicture extends react.Component {
   render() {
     return (

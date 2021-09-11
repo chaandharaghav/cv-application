@@ -1,0 +1,26 @@
+#header {
+  margin: 7rem 4rem;
+}
+
+#name,
+#role {
+  text-transform: uppercase;
+}
+
+#name {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgb(51, 83, 132);
+}
+
+.small-hr {
+  width: 30%;
+  border-top: 2px solid rgb(85, 85, 85);
+  margin-left: 0;
+}
+
+#role {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+}

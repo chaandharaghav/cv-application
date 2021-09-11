@@ -1,5 +1,8 @@
 import react from 'react';
 
+// importing styles
+import '../../styles/SectionItem.css';
+
 // importing fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

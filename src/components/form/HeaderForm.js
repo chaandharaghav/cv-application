@@ -4,6 +4,7 @@ class HeaderForm extends react.Component {
   render() {
     return (
       <div>
+        <h2>Personal Details</h2>
         <div className="form-wrapper">
           <label htmlFor="name-input">Name</label>
           <input

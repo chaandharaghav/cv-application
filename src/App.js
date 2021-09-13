@@ -1,4 +1,6 @@
 import react from 'react';
+import uniqid from 'uniqid';
+
 import './App.css';
 import Form from './components/form/form';
 
@@ -14,79 +16,143 @@ class App extends react.Component {
       'current-role': 'IT Project Manager',
       'work-experience': [
         {
+          id: uniqid(),
           role: 'Project Manager',
           location: 'Westheon FGW',
           duration: 'Oct 2017 - present',
           responsibilities: [
-            'Conduct day-to-day project coordination, planning, and implementation across multiple teams',
-            'Create functional and technical application documents',
+            {
+              text: 'Conduct day-to-day project coordination, planning, and implementation across multiple teams',
+              id: uniqid(),
+            },
+            {
+              text: 'Create functional and technical application documents',
+              id: uniqid(),
+            },
           ],
         },
         {
+          id: uniqid(),
           role: 'Senior UX Designer',
           location: 'Pixelpoint Hive',
           duration: 'Jan 2014 - Sept 2017',
           responsibilities: [
-            'Managed complex projects from start to finish',
-            'Collaborated with other designers',
-            'Translated requirements into polished, high-level designs',
+            {
+              text: 'Managed complex projects from start to finish',
+              id: uniqid(),
+            },
+            {
+              text: 'Collaborated with other designers',
+              id: uniqid(),
+            },
+            {
+              text: 'Translated requirements into polished, high-level designs',
+              id: uniqid(),
+            },
           ],
         },
       ],
       education: [
         {
+          id: uniqid(),
           role: 'Masters in Project Management',
           location: 'HGFZ Graduate Center',
           duration: 'Jan 2013 - Dec 2014',
           responsibilities: [
-            'Studied project planning, coordination, and ethics',
-            'Worked with various startups on launching new apps and services',
+            {
+              text: 'Studied project planning, coordination, and ethics',
+              id: uniqid(),
+            },
+            {
+              text: 'Studied project planning, coordination, and ethics',
+              id: uniqid(),
+            },
           ],
         },
         {
+          id: uniqid(),
           role: 'BA Product Design',
           location: 'Cliffmoor College',
           duration: 'Dec 2008 - Dec 2012',
           responsibilities: [
-            'GPA: 3.26',
-            'Minor in Management',
-            'Thesis involved studying several technology companies and optimizing their product design process',
+            {
+              text: 'GPA: 3.26',
+              id: uniqid(),
+            },
+            {
+              text: 'Minor in Management',
+              id: uniqid(),
+            },
+            {
+              text: 'Thesis involved studying several technology companies and optimizing their product design process',
+              id: uniqid(),
+            },
           ],
         },
       ],
-      contact: {
-        address:
-          'Office Address: 123 Anywhere St., Any City, State, Country 12345',
-        email: 'hello@reallygreatsite.com',
-        website: 'www.reallygreatsite.com',
-        linkedin: '@reallygreatsite',
-      },
+      contact: [
+        {
+          id: uniqid(),
+          type: 'address',
+          value:
+            'Office Address: 123 Anywhere St., Any City, State, Country 12345',
+        },
+        {
+          id: uniqid(),
+          type: 'email',
+          value: 'hello@reallygreatsite.com',
+        },
+        {
+          id: uniqid(),
+          type: 'website',
+          value: 'www.reallygreatsite.com',
+        },
+        {
+          id: uniqid(),
+          type: 'linkedin',
+          value: '@reallygreatsite',
+        },
+      ],
       skills: [
         {
+          id: uniqid(),
           name: 'Project Management',
           level: 4,
         },
         {
+          id: uniqid(),
           name: 'Software Management',
           level: 5,
         },
         {
+          id: uniqid(),
           name: 'Budgeting and cost Analysis',
           level: 3,
         },
         {
+          id: uniqid(),
           name: 'Staff and User training',
           level: 2,
         },
         {
+          id: uniqid(),
           name: 'Process improvement',
           level: 3,
         },
       ],
       awards: [
-        'Most Outstanding Employee of the Year, Pixelpoint Hive (2015)',
-        'Best Mobile App Design, HGFZ Graduate Center (2014)',
-        'Design Awards, Cliffmoor College (2012)',
+        {
+          text: 'Most Outstanding Employee of the Year, Pixelpoint Hive (2015)',
+          id: uniqid(),
+        },
+        {
+          text: 'Best Mobile App Design, HGFZ Graduate Center (2014)',
+          id: uniqid(),
+        },
+        {
+          text: 'Design Awards, Cliffmoor College (2012)',
+          id: uniqid(),
+        },
       ],
     };
 

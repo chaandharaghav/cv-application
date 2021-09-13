@@ -11,6 +11,7 @@ class MainContentSection extends react.Component {
         <h2>{this.props.heading}</h2>
         {this.props['experience-details'].map((experience) => (
           <MainSectionEntry
+            key={experience.id}
             role={experience.role}
             location={experience.location}
             duration={experience.duration}

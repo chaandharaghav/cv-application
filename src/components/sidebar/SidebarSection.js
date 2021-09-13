@@ -10,12 +10,11 @@ class SidebarSection extends react.Component {
     let sectionItems = null;
 
     if (this.props.name === 'contact') {
-      const propertyNames = Object.keys(this.props.details);
-      const contactDetails = this.props.details;
-      sectionItems = propertyNames.map((propertyName) => (
+      sectionItems = this.props.details.map((contact) => (
         <SectionItem
-          itemName={propertyName}
-          itemValue={contactDetails[propertyName]}
+          itemName={contact.type}
+          itemValue={contact.value}
+          key={contact.id}
         />
       ));
     } else if (this.props.name === 'skills') {
@@ -23,11 +22,16 @@ class SidebarSection extends react.Component {
         <SectionItem
           itemName={`proficiency${skill.level}`}
           itemValue={skill.name}
+          key={skill.id}
         />
       ));
     } else if (this.props.name === 'achievements') {
       sectionItems = this.props.details.map((achievement) => (
-        <SectionItem itemName={'achievement'} itemValue={achievement} />
+        <SectionItem
+          itemName={'achievement'}
+          itemValue={achievement.text}
+          key={achievement.id}
+        />
       ));
     }
     return (

@@ -1,5 +1,6 @@
 import react from 'react';
 import './App.css';
+import Form from './components/form/form';
 
 import MainContent from './components/mainContent/MainContent';
 import Sidebar from './components/sidebar/Sidebar';
@@ -88,11 +89,29 @@ class App extends react.Component {
         'Design Awards, Cliffmoor College (2012)',
       ],
     };
+
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleCurrentRoleChange = this.handleCurrentRoleChange.bind(this);
   }
+
+  handleNameChange(e) {
+    this.setState({ name: e.target.value });
+  }
+
+  handleCurrentRoleChange(e) {
+    this.setState({ 'current-role': e.target.value });
+  }
+
   render() {
     return (
       <div className="App">
-        <div id="form-div"></div>
+        <div id="form-div">
+          <Form
+            onNameChange={this.handleNameChange}
+            onCurrentRoleChange={this.handleCurrentRoleChange}
+            details={this.state}
+          />
+        </div>
         <div id="preview-div">
           <Sidebar
             contact={this.state.contact}

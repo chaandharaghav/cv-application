@@ -10,6 +10,11 @@ import {
   faMapMarker,
   faLaptop,
   faTrophy,
+  faDiceOne,
+  faDiceTwo,
+  faDiceThree,
+  faDiceFour,
+  faDiceFive,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faLinkedin,
@@ -19,13 +24,18 @@ import {
 
 function getEmoji(itemName) {
   const emojiMatch = {
-    mail: faEnvelope,
+    email: faEnvelope,
     address: faMapMarker,
     website: faLaptop,
     linkedin: faLinkedin,
     instagram: faInstagram,
     facebook: faFacebook,
     achievement: faTrophy,
+    proficiency1: faDiceOne,
+    proficiency2: faDiceTwo,
+    proficiency3: faDiceThree,
+    proficiency4: faDiceFour,
+    proficiency5: faDiceFive,
   };
 
   return <FontAwesomeIcon icon={emojiMatch[itemName]} />;

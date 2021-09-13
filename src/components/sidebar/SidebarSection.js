@@ -7,18 +7,33 @@ import '../../styles/SidebarSection.css';
 
 class SidebarSection extends react.Component {
   render() {
+    let sectionItems = null;
+
+    if (this.props.name === 'contact') {
+      const propertyNames = Object.keys(this.props.details);
+      const contactDetails = this.props.details;
+      sectionItems = propertyNames.map((propertyName) => (
+        <SectionItem
+          itemName={propertyName}
+          itemValue={contactDetails[propertyName]}
+        />
+      ));
+    } else if (this.props.name === 'skills') {
+      sectionItems = this.props.details.map((skill) => (
+        <SectionItem
+          itemName={`proficiency${skill.level}`}
+          itemValue={skill.name}
+        />
+      ));
+    } else if (this.props.name === 'achievements') {
+      sectionItems = this.props.details.map((achievement) => (
+        <SectionItem itemName={'achievement'} itemValue={achievement} />
+      ));
+    }
     return (
       <div className="sidebar-section">
         <SectionHeading text={this.props.heading} />
-        <SectionItem
-          itemName="address"
-          itemValue="52/23, Lincoln street, Texas, Unites States of America - 624834"
-        />
-        <SectionItem
-          itemName="mail"
-          itemValue="big.ass.email@&#8203;address-is&#8203;.extremely.lame.de"
-        />
-        <SectionItem itemName="instagram" itemValue="@chaandharaghav" />
+        {sectionItems}
       </div>
     );
   }

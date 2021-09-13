@@ -62,23 +62,23 @@ class App extends react.Component {
       },
       skills: [
         {
-          skill: 'Project Management',
+          name: 'Project Management',
           level: 4,
         },
         {
-          skill: 'Software Management',
-          level: 2,
+          name: 'Software Management',
+          level: 5,
         },
         {
-          skill: 'Budgeting and cost Analysis',
+          name: 'Budgeting and cost Analysis',
           level: 3,
         },
         {
-          skill: 'Staff and User training',
+          name: 'Staff and User training',
           level: 2,
         },
         {
-          skill: 'Process improvement',
+          name: 'Process improvement',
           level: 3,
         },
       ],
@@ -94,7 +94,11 @@ class App extends react.Component {
       <div className="App">
         <div id="form-div"></div>
         <div id="preview-div">
-          <Sidebar />
+          <Sidebar
+            contact={this.state.contact}
+            skills={this.state.skills}
+            achievements={this.state.awards}
+          />
           <MainContent
             name={this.state.name}
             role={this.state['current-role']}

@@ -11,9 +11,15 @@ class MainContent extends react.Component {
   render() {
     return (
       <div id="main-content">
-        <Header name="Olivia Wilson" role="IT PROJECT MANAGER" />
-        <MainContentSection heading="WORK EXPERIENCE" />
-        <MainContentSection heading="WORK EXPERIENCE" />
+        <Header name={this.props.name} role={this.props.role} />
+        <MainContentSection
+          heading="WORK EXPERIENCE"
+          experience-details={this.props['work-experience']}
+        />
+        <MainContentSection
+          heading="EDUCATIONAL HISTORY"
+          experience-details={this.props.education}
+        />
       </div>
     );
   }

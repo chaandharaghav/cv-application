@@ -95,7 +95,12 @@ class App extends react.Component {
         <div id="form-div"></div>
         <div id="preview-div">
           <Sidebar />
-          <MainContent />
+          <MainContent
+            name={this.state.name}
+            role={this.state['current-role']}
+            work-experience={this.state['work-experience']}
+            education={this.state.education}
+          />
         </div>
       </div>
     );

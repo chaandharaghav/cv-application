@@ -64,7 +64,7 @@ class App extends react.Component {
               id: uniqid(),
             },
             {
-              text: 'Studied project planning, coordination, and ethics',
+              text: 'Worked with various startups on launching new apps and services',
               id: uniqid(),
             },
           ],
@@ -158,7 +158,7 @@ class App extends react.Component {
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleCurrentRoleChange = this.handleCurrentRoleChange.bind(this);
-    this.handleRoleChange = this.handleRoleChange.bind(this);
+    this.handlePropertyChange = this.handlePropertyChange.bind(this);
   }
 
   handleNameChange(e) {
@@ -169,17 +169,19 @@ class App extends react.Component {
     this.setState({ 'current-role': e.target.value });
   }
 
-  handleRoleChange(e) {
+  handlePropertyChange(e) {
     const id = e.target.id;
+    const property = e.target.previousElementSibling.innerText.toLowerCase();
+
     const experience = Array.from(this.state['work-experience']);
     const education = Array.from(this.state.education);
 
     let index = experience.findIndex((obj) => obj.id === id);
     if (index !== -1) {
-      experience[index].role = e.target.value;
+      experience[index][property] = e.target.value;
     } else {
       index = education.findIndex((obj) => obj.id === id);
-      education[index].role = e.target.value;
+      education[index][property] = e.target.value;
     }
 
     this.setState({ education: education, 'work-experience': experience });
@@ -192,7 +194,7 @@ class App extends react.Component {
           <Form
             onNameChange={this.handleNameChange}
             onCurrentRoleChange={this.handleCurrentRoleChange}
-            onRoleChange={this.handleRoleChange}
+            onPropertyChange={this.handlePropertyChange}
             details={this.state}
           />
         </div>

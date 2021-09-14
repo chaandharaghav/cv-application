@@ -11,7 +11,7 @@ class MainContentSectionForm extends react.Component {
             work-experience={experience}
             key={experience.id}
             id={experience.id}
-            onRoleChange={this.props.onRoleChange}
+            onPropertyChange={this.props.onPropertyChange}
           />
         ))}
       </div>

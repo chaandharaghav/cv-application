@@ -15,12 +15,12 @@ class Form extends react.Component {
         <MainContentSectionForm
           title="Work Experience"
           work-experience={this.props.details['work-experience']}
-          onRoleChange={this.props.onRoleChange}
+          onPropertyChange={this.props.onPropertyChange}
         />
         <MainContentSectionForm
           title="Educational History"
           work-experience={this.props.details.education}
-          onRoleChange={this.props.onRoleChange}
+          onPropertyChange={this.props.onPropertyChange}
         />
       </div>
     );

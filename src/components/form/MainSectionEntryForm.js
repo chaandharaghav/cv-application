@@ -10,16 +10,26 @@ class MainSectionEntryForm extends react.Component {
             type="text"
             value={this.props['work-experience'].role}
             id={this.props.id}
-            onChange={this.props.onRoleChange}
+            onChange={this.props.onPropertyChange}
           />
         </div>
         <div className="form-wrapper">
           <label htmlFor="">Location</label>
-          <input type="text" value={this.props['work-experience'].location} />
+          <input
+            type="text"
+            value={this.props['work-experience'].location}
+            id={this.props.id}
+            onChange={this.props.onPropertyChange}
+          />
         </div>
         <div className="form-wrapper">
           <label htmlFor="">Duration</label>
-          <input type="text" value={this.props['work-experience'].duration} />
+          <input
+            type="text"
+            value={this.props['work-experience'].duration}
+            id={this.props.id}
+            onChange={this.props.onPropertyChange}
+          />
         </div>
         {/* {this.props['work-experience'].responsibilities.map(
           (responsibility) => (

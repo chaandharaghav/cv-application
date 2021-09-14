@@ -159,6 +159,8 @@ class App extends react.Component {
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleCurrentRoleChange = this.handleCurrentRoleChange.bind(this);
     this.handlePropertyChange = this.handlePropertyChange.bind(this);
+    this.handleResponsibilityChange =
+      this.handleResponsibilityChange.bind(this);
   }
 
   handleNameChange(e) {
@@ -187,6 +189,34 @@ class App extends react.Component {
     this.setState({ education: education, 'work-experience': experience });
   }
 
+  handleResponsibilityChange(e) {
+    const id = e.target.id;
+
+    const experience = Array.from(this.state['work-experience']);
+    const education = Array.from(this.state.education);
+
+    let objectIndex = experience.findIndex((obj) =>
+      obj.responsibilities.find((resp) => resp.id === id),
+    );
+
+    if (objectIndex !== -1) {
+      const responsibilities = experience[objectIndex].responsibilities;
+      const respIndex = responsibilities.findIndex((resp) => resp.id === id);
+
+      experience[objectIndex].responsibilities[respIndex].text = e.target.value;
+    } else {
+      objectIndex = education.findIndex((obj) =>
+        obj.responsibilities.find((resp) => resp.id === id),
+      );
+      const responsibilities = education[objectIndex].responsibilities;
+      const respIndex = responsibilities.findIndex((resp) => resp.id === id);
+
+      education[objectIndex].responsibilities[respIndex].text = e.target.value;
+    }
+
+    this.setState({ education: education, 'work-experience': experience });
+  }
+
   render() {
     return (
       <div className="App">
@@ -195,6 +225,7 @@ class App extends react.Component {
             onNameChange={this.handleNameChange}
             onCurrentRoleChange={this.handleCurrentRoleChange}
             onPropertyChange={this.handlePropertyChange}
+            onResponsibilityChange={this.handleResponsibilityChange}
             details={this.state}
           />
         </div>

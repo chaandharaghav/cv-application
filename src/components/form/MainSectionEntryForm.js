@@ -31,11 +31,21 @@ class MainSectionEntryForm extends react.Component {
             onChange={this.props.onPropertyChange}
           />
         </div>
-        {/* {this.props['work-experience'].responsibilities.map(
-          (responsibility) => (
-            <textarea>{responsibility}</textarea>
-          ),
-        )} */}
+        <p>Responsibilities</p>
+        <ul>
+          {this.props['work-experience'].responsibilities.map(
+            (responsibility) => (
+              <div className="form-wrapper" key={responsibility.id}>
+                <input
+                  type="text"
+                  value={responsibility.text}
+                  id={responsibility.id}
+                  onChange={this.props.onResponsibilityChange}
+                />
+              </div>
+            ),
+          )}
+        </ul>
       </div>
     );
   }

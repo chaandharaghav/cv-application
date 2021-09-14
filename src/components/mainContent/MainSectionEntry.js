@@ -15,6 +15,7 @@ class MainSectionEntry extends react.Component {
           location={this.props.location}
           duration={this.props.duration}
         />
+
         <ul>
           {this.props.responsibilities.map((responsibility) => (
             <li key={responsibility.id}>{responsibility.text}</li>

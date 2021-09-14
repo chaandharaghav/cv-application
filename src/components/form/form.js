@@ -16,11 +16,13 @@ class Form extends react.Component {
           title="Work Experience"
           work-experience={this.props.details['work-experience']}
           onPropertyChange={this.props.onPropertyChange}
+          onResponsibilityChange={this.props.onResponsibilityChange}
         />
         <MainContentSectionForm
           title="Educational History"
           work-experience={this.props.details.education}
           onPropertyChange={this.props.onPropertyChange}
+          onResponsibilityChange={this.props.onResponsibilityChange}
         />
       </div>
     );

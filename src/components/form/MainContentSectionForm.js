@@ -12,6 +12,7 @@ class MainContentSectionForm extends react.Component {
             key={experience.id}
             id={experience.id}
             onPropertyChange={this.props.onPropertyChange}
+            onResponsibilityChange={this.props.onResponsibilityChange}
           />
         ))}
       </div>

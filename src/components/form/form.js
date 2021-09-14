@@ -1,6 +1,7 @@
 import react from 'react';
 import HeaderForm from './HeaderForm';
 import MainContentSectionForm from './MainContentSectionForm';
+import SidebarForm from './SidebarForm';
 
 class Form extends react.Component {
   render() {
@@ -23,6 +24,12 @@ class Form extends react.Component {
           work-experience={this.props.details.education}
           onPropertyChange={this.props.onPropertyChange}
           onResponsibilityChange={this.props.onResponsibilityChange}
+        />
+        <SidebarForm
+          contact={this.props.details.contact}
+          skills={this.props.details.skills}
+          achievements={this.props.details.awards}
+          onContactChange={this.props.onContactChange}
         />
       </div>
     );

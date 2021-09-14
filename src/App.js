@@ -161,6 +161,7 @@ class App extends react.Component {
     this.handlePropertyChange = this.handlePropertyChange.bind(this);
     this.handleResponsibilityChange =
       this.handleResponsibilityChange.bind(this);
+    this.handleContactChange = this.handleContactChange.bind(this);
   }
 
   handleNameChange(e) {
@@ -217,6 +218,15 @@ class App extends react.Component {
     this.setState({ education: education, 'work-experience': experience });
   }
 
+  handleContactChange(e) {
+    const id = e.target.id;
+    const contacts = Array.from(this.state.contact);
+    const index = contacts.findIndex((contact) => contact.id === id);
+
+    contacts[index].value = e.target.value;
+    this.setState({ contact: contacts });
+  }
+
   render() {
     return (
       <div className="App">
@@ -226,6 +236,7 @@ class App extends react.Component {
             onCurrentRoleChange={this.handleCurrentRoleChange}
             onPropertyChange={this.handlePropertyChange}
             onResponsibilityChange={this.handleResponsibilityChange}
+            onContactChange={this.handleContactChange}
             details={this.state}
           />
         </div>

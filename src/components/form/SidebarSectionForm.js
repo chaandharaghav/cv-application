@@ -18,8 +18,35 @@ class SidebarSectionForm extends react.Component {
     if (this.props.title === 'Contact') {
       valueName = 'value';
     } else if (this.props.title === 'Skills') {
-      valueName = 'name';
-      title = 'Skill';
+      return (
+        <div>
+          <h2>Skills</h2>
+          {this.props.details.map((skill) => (
+            <div>
+              <div>
+                <label htmlFor="">Skill</label>
+                <input
+                  type="text"
+                  value={skill.name}
+                  id={skill.id}
+                  onChange={this.props.onSkillChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="">Proficiency</label>
+                <input
+                  type="range"
+                  min="1"
+                  max="5"
+                  value={skill.level}
+                  id={skill.id}
+                  onChange={this.props.onProficiencyChange}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      );
     } else {
       valueName = 'text';
       title = 'Award';

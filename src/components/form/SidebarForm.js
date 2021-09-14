@@ -10,7 +10,12 @@ class SidebarForm extends react.Component {
           details={this.props.contact}
           onContactChange={this.props.onContactChange}
         />
-        <SidebarSectionForm title="Skills" details={this.props.skills} />
+        <SidebarSectionForm
+          title="Skills"
+          details={this.props.skills}
+          onSkillChange={this.props.onSkillChange}
+          onProficiencyChange={this.props.onProficiencyChange}
+        />
         <SidebarSectionForm
           title="Achievements"
           details={this.props.achievements}

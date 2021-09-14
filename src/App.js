@@ -162,6 +162,8 @@ class App extends react.Component {
     this.handleResponsibilityChange =
       this.handleResponsibilityChange.bind(this);
     this.handleContactChange = this.handleContactChange.bind(this);
+    this.handleSkillChange = this.handleSkillChange.bind(this);
+    this.handleProficiencyChange = this.handleProficiencyChange.bind(this);
   }
 
   handleNameChange(e) {
@@ -227,6 +229,24 @@ class App extends react.Component {
     this.setState({ contact: contacts });
   }
 
+  handleSkillChange(e) {
+    const id = e.target.id;
+    const skills = Array.from(this.state.skills);
+    const index = skills.findIndex((skill) => skill.id === id);
+
+    skills[index].name = e.target.value;
+    this.setState({ skills: skills });
+  }
+
+  handleProficiencyChange(e) {
+    const id = e.target.id;
+    const skills = Array.from(this.state.skills);
+    const index = skills.findIndex((skill) => skill.id === id);
+
+    skills[index].level = e.target.value;
+    this.setState({ skills: skills });
+  }
+
   render() {
     return (
       <div className="App">
@@ -237,6 +257,8 @@ class App extends react.Component {
             onPropertyChange={this.handlePropertyChange}
             onResponsibilityChange={this.handleResponsibilityChange}
             onContactChange={this.handleContactChange}
+            onSkillChange={this.handleSkillChange}
+            onProficiencyChange={this.handleProficiencyChange}
             details={this.state}
           />
         </div>

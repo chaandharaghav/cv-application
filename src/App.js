@@ -164,6 +164,7 @@ class App extends react.Component {
     this.handleContactChange = this.handleContactChange.bind(this);
     this.handleSkillChange = this.handleSkillChange.bind(this);
     this.handleProficiencyChange = this.handleProficiencyChange.bind(this);
+    this.handleAchievementChange = this.handleAchievementChange.bind(this);
   }
 
   handleNameChange(e) {
@@ -247,6 +248,15 @@ class App extends react.Component {
     this.setState({ skills: skills });
   }
 
+  handleAchievementChange(e) {
+    const id = e.target.id;
+    const achievements = Array.from(this.state.awards);
+    const index = achievements.findIndex((award) => award.id === id);
+
+    achievements[index].text = e.target.value;
+    this.setState({ awards: achievements });
+  }
+
   render() {
     return (
       <div className="App">
@@ -259,6 +269,7 @@ class App extends react.Component {
             onContactChange={this.handleContactChange}
             onSkillChange={this.handleSkillChange}
             onProficiencyChange={this.handleProficiencyChange}
+            onAchievementChange={this.handleAchievementChange}
             details={this.state}
           />
         </div>

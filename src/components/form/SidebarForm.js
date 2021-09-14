@@ -19,6 +19,7 @@ class SidebarForm extends react.Component {
         <SidebarSectionForm
           title="Achievements"
           details={this.props.achievements}
+          onAchievementChange={this.props.onAchievementChange}
         />
       </div>
     );

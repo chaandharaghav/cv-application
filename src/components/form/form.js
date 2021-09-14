@@ -32,6 +32,7 @@ class Form extends react.Component {
           onContactChange={this.props.onContactChange}
           onSkillChange={this.props.onSkillChange}
           onProficiencyChange={this.props.onProficiencyChange}
+          onAchievementChange={this.props.onAchievementChange}
         />
       </div>
     );

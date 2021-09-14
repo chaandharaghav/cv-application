@@ -12,17 +12,29 @@ function capitalize(text) {
 
 class SidebarSectionForm extends react.Component {
   render() {
-    let valueName = null;
-    let title = null;
-
     if (this.props.title === 'Contact') {
-      valueName = 'value';
+      return (
+        <div>
+          <h2>{this.props.title}</h2>
+          <ul>
+            {this.props.details.map((contact) => (
+              <SectionItemForm
+                title={capitalize(contact.type)}
+                value={contact['value']}
+                id={contact.id}
+                key={contact.id}
+                onChange={this.props.onContactChange}
+              />
+            ))}
+          </ul>
+        </div>
+      );
     } else if (this.props.title === 'Skills') {
       return (
         <div>
           <h2>Skills</h2>
           {this.props.details.map((skill) => (
-            <div>
+            <div key={skill.id}>
               <div>
                 <label htmlFor="">Skill</label>
                 <input
@@ -48,26 +60,23 @@ class SidebarSectionForm extends react.Component {
         </div>
       );
     } else {
-      valueName = 'text';
-      title = 'Award';
+      return (
+        <div>
+          <h2>{this.props.title}</h2>
+          <ul>
+            {this.props.details.map((award) => (
+              <SectionItemForm
+                title="Achievements"
+                value={award.text}
+                id={award.id}
+                key={award.id}
+                onChange={this.props.onAchievementChange}
+              />
+            ))}
+          </ul>
+        </div>
+      );
     }
-
-    return (
-      <div>
-        <h2>{this.props.title}</h2>
-        <ul>
-          {this.props.details.map((item) => (
-            <SectionItemForm
-              title={capitalize(item.type) || title}
-              value={item[valueName]}
-              id={item.id}
-              key={item.id}
-              onContactChange={this.props.onContactChange}
-            />
-          ))}
-        </ul>
-      </div>
-    );
   }
 }
 

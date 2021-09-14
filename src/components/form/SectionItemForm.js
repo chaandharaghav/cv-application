@@ -9,7 +9,7 @@ class SidebarItemForm extends react.Component {
           id={this.props.id}
           type="text"
           value={this.props.value}
-          onChange={this.props.onContactChange}
+          onChange={this.props.onChange}
         />
       </div>
     );

@@ -6,7 +6,12 @@ class MainSectionEntryForm extends react.Component {
       <div className="main-section-entry-form">
         <div className="form-wrapper">
           <label htmlFor="">Role</label>
-          <input type="text" value={this.props['work-experience'].role} />
+          <input
+            type="text"
+            value={this.props['work-experience'].role}
+            id={this.props.id}
+            onChange={this.props.onRoleChange}
+          />
         </div>
         <div className="form-wrapper">
           <label htmlFor="">Location</label>

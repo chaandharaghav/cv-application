@@ -158,6 +158,7 @@ class App extends react.Component {
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleCurrentRoleChange = this.handleCurrentRoleChange.bind(this);
+    this.handleRoleChange = this.handleRoleChange.bind(this);
   }
 
   handleNameChange(e) {
@@ -168,6 +169,22 @@ class App extends react.Component {
     this.setState({ 'current-role': e.target.value });
   }
 
+  handleRoleChange(e) {
+    const id = e.target.id;
+    const experience = Array.from(this.state['work-experience']);
+    const education = Array.from(this.state.education);
+
+    let index = experience.findIndex((obj) => obj.id === id);
+    if (index !== -1) {
+      experience[index].role = e.target.value;
+    } else {
+      index = education.findIndex((obj) => obj.id === id);
+      education[index].role = e.target.value;
+    }
+
+    this.setState({ education: education, 'work-experience': experience });
+  }
+
   render() {
     return (
       <div className="App">
@@ -175,6 +192,7 @@ class App extends react.Component {
           <Form
             onNameChange={this.handleNameChange}
             onCurrentRoleChange={this.handleCurrentRoleChange}
+            onRoleChange={this.handleRoleChange}
             details={this.state}
           />
         </div>

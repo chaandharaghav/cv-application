@@ -10,6 +10,8 @@ class MainContentSectionForm extends react.Component {
           <MainSectionEntryForm
             work-experience={experience}
             key={experience.id}
+            id={experience.id}
+            onRoleChange={this.props.onRoleChange}
           />
         ))}
       </div>

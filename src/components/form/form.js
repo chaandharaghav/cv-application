@@ -21,13 +21,16 @@ class Form extends react.Component {
           work-experience={this.props.details['work-experience']}
           onPropertyChange={this.props.onPropertyChange}
           onResponsibilityChange={this.props.onResponsibilityChange}
-          addNewExperienceEntry={this.props.addNewExperienceEntry}
+          addNewEntry={this.props.addNewExperienceEntry}
+          deleteEntry={this.props.deleteExperienceEntry}
         />
         <MainContentSectionForm
           title="Educational History"
           work-experience={this.props.details.education}
           onPropertyChange={this.props.onPropertyChange}
           onResponsibilityChange={this.props.onResponsibilityChange}
+          addNewEntry={this.props.addNewEducationEntry}
+          deleteEntry={this.props.deleteEducationEntry}
         />
         <SidebarForm
           contact={this.props.details.contact}

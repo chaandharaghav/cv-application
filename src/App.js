@@ -166,6 +166,11 @@ class App extends react.Component {
     this.handleProficiencyChange = this.handleProficiencyChange.bind(this);
     this.handleAchievementChange = this.handleAchievementChange.bind(this);
     this.handleNewExperienceEntry = this.handleNewExperienceEntry.bind(this);
+    this.handleDeleteExperienceEntry =
+      this.handleDeleteExperienceEntry.bind(this);
+    this.handleNewEducationEntry = this.handleNewEducationEntry.bind(this);
+    this.handleDeleteEducationEntry =
+      this.handleDeleteEducationEntry.bind(this);
   }
 
   handleNameChange(e) {
@@ -259,7 +264,6 @@ class App extends react.Component {
   }
 
   handleNewExperienceEntry() {
-    console.log('yes');
     const workExperience = Array.from(this.state['work-experience']);
     const newExperience = {
       id: uniqid(),
@@ -285,6 +289,53 @@ class App extends react.Component {
     this.setState({ 'work-experience': workExperience });
   }
 
+  handleDeleteExperienceEntry(e) {
+    const workExperience = Array.from(this.state['work-experience']);
+    const id = e.target.id;
+
+    const index = workExperience.findIndex(
+      (experience) => experience.id === id,
+    );
+    workExperience.splice(index, 1);
+
+    this.setState({ 'work-experience': workExperience });
+  }
+  handleNewEducationEntry() {
+    const education = Array.from(this.state.education);
+    const newEducation = {
+      id: uniqid(),
+      role: 'Your major here',
+      location: 'What institute did you attend ?',
+      duration: 'Month Year - Month Year',
+      responsibilities: [
+        {
+          text: 'Eg. GPA : 3.54',
+          id: uniqid(),
+        },
+        {
+          text: 'Eg. Studied this that and that',
+          id: uniqid(),
+        },
+        {
+          text: 'Eg. Worked with that club and achieved this',
+          id: uniqid(),
+        },
+      ],
+    };
+    education.push(newEducation);
+    this.setState({ education: education });
+  }
+
+  handleDeleteEducationEntry(e) {
+    const education = Array.from(this.state.education);
+    const id = e.target.id;
+
+    const index = education.findIndex((eduObj) => eduObj.id === id);
+    education.splice(index, 1);
+
+    this.setState({ education: education });
+  }
+
   render() {
     return (
       <div className="App">
@@ -299,6 +350,9 @@ class App extends react.Component {
             onProficiencyChange={this.handleProficiencyChange}
             onAchievementChange={this.handleAchievementChange}
             addNewExperienceEntry={this.handleNewExperienceEntry}
+            deleteExperienceEntry={this.handleDeleteExperienceEntry}
+            addNewEducationEntry={this.handleNewEducationEntry}
+            deleteEducationEntry={this.handleDeleteEducationEntry}
             details={this.state}
           />
         </div>

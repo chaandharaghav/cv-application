@@ -22,6 +22,8 @@ class SidebarForm extends react.Component {
           title="Achievements"
           details={this.props.achievements}
           onAchievementChange={this.props.onAchievementChange}
+          addNewAwardEntry={this.props.addNewAwardEntry}
+          deleteAwardEntry={this.props.deleteAwardEntry}
         />
       </div>
     );

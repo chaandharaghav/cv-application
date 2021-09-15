@@ -173,6 +173,8 @@ class App extends react.Component {
       this.handleDeleteEducationEntry.bind(this);
     this.handleNewSkillEntry = this.handleNewSkillEntry.bind(this);
     this.handleDeleteSkillEntry = this.handleDeleteSkillEntry.bind(this);
+    this.handleNewAwardEntry = this.handleNewAwardEntry.bind(this);
+    this.handleDeleteAwardEntry = this.handleDeleteAwardEntry.bind(this);
   }
 
   handleNameChange(e) {
@@ -359,6 +361,26 @@ class App extends react.Component {
     this.setState({ skills: skills });
   }
 
+  handleNewAwardEntry(e) {
+    const awards = Array.from(this.state.awards);
+    const newAward = {
+      id: uniqid(),
+      text: 'Award given to you',
+    };
+
+    awards.push(newAward);
+    this.setState({ awards: awards });
+  }
+  handleDeleteAwardEntry(e) {
+    const awards = Array.from(this.state.awards);
+    const id = e.target.id;
+
+    const index = awards.findIndex((award) => award.id === id);
+    awards.splice(index, 1);
+
+    this.setState({ awards: awards });
+  }
+
   render() {
     return (
       <div className="App">
@@ -378,6 +400,8 @@ class App extends react.Component {
             deleteEducationEntry={this.handleDeleteEducationEntry}
             addNewSkillEntry={this.handleNewSkillEntry}
             deleteSkillEntry={this.handleDeleteSkillEntry}
+            addNewAwardEntry={this.handleNewAwardEntry}
+            deleteAwardEntry={this.handleDeleteAwardEntry}
             details={this.state}
           />
         </div>

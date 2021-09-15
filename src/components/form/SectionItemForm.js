@@ -11,6 +11,13 @@ class SidebarItemForm extends react.Component {
           value={this.props.value}
           onChange={this.props.onChange}
         />
+        <button
+          className="remove-item-button"
+          id={this.props.id}
+          onClick={this.props.deleteAwardEntry}
+        >
+          Remove item
+        </button>
       </div>
     );
   }

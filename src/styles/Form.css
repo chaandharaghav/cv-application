@@ -92,7 +92,8 @@ input[type='text'] {
   }
 }
 
-.skill-div .remove-item-button {
+.skill-div .remove-item-button,
+.form-wrapper .remove-item-button {
   max-width: 100px;
 
   align-self: center;

@@ -83,10 +83,17 @@ class SidebarSectionForm extends react.Component {
                   id={award.id}
                   key={award.id}
                   onChange={this.props.onAchievementChange}
+                  deleteAwardEntry={this.props.deleteAwardEntry}
                 />
               </li>
             ))}
           </ul>
+          <button
+            className="add-item-button"
+            onClick={this.props.addNewAwardEntry}
+          >
+            Add award
+          </button>
         </div>
       );
     }

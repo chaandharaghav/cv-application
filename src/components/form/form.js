@@ -42,6 +42,8 @@ class Form extends react.Component {
           onAchievementChange={this.props.onAchievementChange}
           addNewSkillEntry={this.props.addNewSkillEntry}
           deleteSkillEntry={this.props.deleteSkillEntry}
+          addNewAwardEntry={this.props.addNewAwardEntry}
+          deleteAwardEntry={this.props.deleteAwardEntry}
         />
       </div>
     );

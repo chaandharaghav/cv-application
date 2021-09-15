@@ -3,7 +3,7 @@ import react from 'react';
 class HeaderForm extends react.Component {
   render() {
     return (
-      <div>
+      <div className="form-section">
         <h2>Personal Details</h2>
         <div className="form-wrapper">
           <label htmlFor="name-input">Name</label>

@@ -4,3 +4,9 @@
 
   margin-bottom: 2rem;
 }
+
+@media (max-width: 767px) {
+  .sidebar-section:last-child {
+    margin-top: 5rem;
+  }
+}

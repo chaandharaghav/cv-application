@@ -3,7 +3,7 @@ import react from 'react';
 class SidebarItemForm extends react.Component {
   render() {
     return (
-      <div>
+      <div className="form-wrapper">
         <label htmlFor="">{this.props.title}</label>
         <input
           id={this.props.id}

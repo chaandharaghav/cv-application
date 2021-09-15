@@ -4,7 +4,7 @@ import MainSectionEntryForm from './MainSectionEntryForm';
 class MainContentSectionForm extends react.Component {
   render() {
     return (
-      <div>
+      <div className="form-section">
         <h2>{this.props.title}</h2>
         {this.props['work-experience'].map((experience) => (
           <MainSectionEntryForm

@@ -3,10 +3,13 @@ import HeaderForm from './HeaderForm';
 import MainContentSectionForm from './MainContentSectionForm';
 import SidebarForm from './SidebarForm';
 
+// importing styles
+import '../../styles/Form.css';
+
 class Form extends react.Component {
   render() {
     return (
-      <div id="form-div">
+      <div id="form">
         <HeaderForm
           onNameChange={this.props.onNameChange}
           onCurrentRoleChange={this.props.onCurrentRoleChange}

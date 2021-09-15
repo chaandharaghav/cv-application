@@ -35,14 +35,16 @@ class MainSectionEntryForm extends react.Component {
         <ul>
           {this.props['work-experience'].responsibilities.map(
             (responsibility) => (
-              <div className="form-wrapper" key={responsibility.id}>
-                <input
-                  type="text"
-                  value={responsibility.text}
-                  id={responsibility.id}
-                  onChange={this.props.onResponsibilityChange}
-                />
-              </div>
+              <li>
+                <div className="form-wrapper" key={responsibility.id}>
+                  <input
+                    type="text"
+                    value={responsibility.text}
+                    id={responsibility.id}
+                    onChange={this.props.onResponsibilityChange}
+                  />
+                </div>
+              </li>
             ),
           )}
         </ul>

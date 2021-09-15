@@ -7,12 +7,45 @@
   display: flex;
 }
 
-#form-div {
-  border-right: 1px solid grey;
-}
-
 #form-div,
 #preview-div {
   width: 50vw;
   min-height: 100vh;
+}
+
+@media (max-width: 767px) {
+  #preview-div {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 1023px) {
+  .App {
+    flex-direction: column-reverse;
+  }
+
+  #form-div,
+  #preview-div {
+    width: 100vw;
+  }
+
+  #form-div {
+    padding: 3rem;
+  }
+
+  #preview-div {
+    border-bottom: 1px solid grey;
+  }
+}
+
+@media (min-width: 1024px) {
+  #form-div {
+    padding: 5rem;
+    overflow-y: scroll;
+  }
+
+  #form-div,
+  #preview-div {
+    max-height: 110vh;
+  }
 }

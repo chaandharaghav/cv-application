@@ -14,27 +14,25 @@ class SidebarSectionForm extends react.Component {
   render() {
     if (this.props.title === 'Contact') {
       return (
-        <div>
+        <div className="form-section">
           <h2>{this.props.title}</h2>
-          <ul>
-            {this.props.details.map((contact) => (
-              <SectionItemForm
-                title={capitalize(contact.type)}
-                value={contact['value']}
-                id={contact.id}
-                key={contact.id}
-                onChange={this.props.onContactChange}
-              />
-            ))}
-          </ul>
+          {this.props.details.map((contact) => (
+            <SectionItemForm
+              title={capitalize(contact.type)}
+              value={contact['value']}
+              id={contact.id}
+              key={contact.id}
+              onChange={this.props.onContactChange}
+            />
+          ))}
         </div>
       );
     } else if (this.props.title === 'Skills') {
       return (
-        <div>
+        <div className="form-section">
           <h2>Skills</h2>
           {this.props.details.map((skill) => (
-            <div key={skill.id}>
+            <div key={skill.id} className="skill-div">
               <div>
                 <label htmlFor="">Skill</label>
                 <input
@@ -61,17 +59,19 @@ class SidebarSectionForm extends react.Component {
       );
     } else {
       return (
-        <div>
+        <div className="form-section">
           <h2>{this.props.title}</h2>
           <ul>
             {this.props.details.map((award) => (
-              <SectionItemForm
-                title="Achievements"
-                value={award.text}
-                id={award.id}
-                key={award.id}
-                onChange={this.props.onAchievementChange}
-              />
+              <li>
+                <SectionItemForm
+                  title="Achievement"
+                  value={award.text}
+                  id={award.id}
+                  key={award.id}
+                  onChange={this.props.onAchievementChange}
+                />
+              </li>
             ))}
           </ul>
         </div>

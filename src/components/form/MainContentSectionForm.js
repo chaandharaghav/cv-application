@@ -15,6 +15,9 @@ class MainContentSectionForm extends react.Component {
             onResponsibilityChange={this.props.onResponsibilityChange}
           />
         ))}
+        <button onClick={this.props.addNewExperienceEntry}>{`Add ${
+          this.props.title === 'Work Experience' ? 'experience' : 'education'
+        }`}</button>
       </div>
     );
   }

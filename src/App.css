@@ -2,14 +2,21 @@
   box-sizing: border-box;
 }
 
+.App {
+  width: 100vw;
+}
+
 .App,
 #preview-div {
   display: flex;
 }
 
+#form-div {
+  min-width: 50vw;
+}
+
 #form-div,
 #preview-div {
-  width: 50vw;
   min-height: 100vh;
 }
 
@@ -24,11 +31,6 @@
     flex-direction: column-reverse;
   }
 
-  #form-div,
-  #preview-div {
-    width: 100vw;
-  }
-
   #form-div {
     padding: 3rem;
   }
@@ -40,12 +42,13 @@
 
 @media (min-width: 1024px) {
   #form-div {
+    max-height: 100vh;
     padding: 5rem;
     overflow-y: scroll;
   }
 
-  #form-div,
-  #preview-div {
-    max-height: 110vh;
+  #preview-div-wrapper {
+    max-height: 100vh;
+    overflow-y: scroll;
   }
 }

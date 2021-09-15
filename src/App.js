@@ -165,6 +165,7 @@ class App extends react.Component {
     this.handleSkillChange = this.handleSkillChange.bind(this);
     this.handleProficiencyChange = this.handleProficiencyChange.bind(this);
     this.handleAchievementChange = this.handleAchievementChange.bind(this);
+    this.handleNewExperienceEntry = this.handleNewExperienceEntry.bind(this);
   }
 
   handleNameChange(e) {
@@ -257,6 +258,33 @@ class App extends react.Component {
     this.setState({ awards: achievements });
   }
 
+  handleNewExperienceEntry() {
+    console.log('yes');
+    const workExperience = Array.from(this.state['work-experience']);
+    const newExperience = {
+      id: uniqid(),
+      role: 'Your role here',
+      location: 'Where did you work ?',
+      duration: 'Month Year - Month Year',
+      responsibilities: [
+        {
+          text: 'Eg. I managed this that and that',
+          id: uniqid(),
+        },
+        {
+          text: 'Eg. Collaborated from them and used this',
+          id: uniqid(),
+        },
+        {
+          text: 'Eg. Translated requirements into this level real-world project',
+          id: uniqid(),
+        },
+      ],
+    };
+    workExperience.push(newExperience);
+    this.setState({ 'work-experience': workExperience });
+  }
+
   render() {
     return (
       <div className="App">
@@ -270,21 +298,24 @@ class App extends react.Component {
             onSkillChange={this.handleSkillChange}
             onProficiencyChange={this.handleProficiencyChange}
             onAchievementChange={this.handleAchievementChange}
+            addNewExperienceEntry={this.handleNewExperienceEntry}
             details={this.state}
           />
         </div>
-        <div id="preview-div">
-          <Sidebar
-            contact={this.state.contact}
-            skills={this.state.skills}
-            achievements={this.state.awards}
-          />
-          <MainContent
-            name={this.state.name}
-            role={this.state['current-role']}
-            work-experience={this.state['work-experience']}
-            education={this.state.education}
-          />
+        <div id="preview-div-wrapper">
+          <div id="preview-div">
+            <Sidebar
+              contact={this.state.contact}
+              skills={this.state.skills}
+              achievements={this.state.awards}
+            />
+            <MainContent
+              name={this.state.name}
+              role={this.state['current-role']}
+              work-experience={this.state['work-experience']}
+              education={this.state.education}
+            />
+          </div>
         </div>
       </div>
     );

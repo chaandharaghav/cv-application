@@ -63,7 +63,7 @@ class SidebarSectionForm extends react.Component {
           <h2>{this.props.title}</h2>
           <ul>
             {this.props.details.map((award) => (
-              <li>
+              <li key={award.id}>
                 <SectionItemForm
                   title="Achievement"
                   value={award.text}

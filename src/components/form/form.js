@@ -21,6 +21,7 @@ class Form extends react.Component {
           work-experience={this.props.details['work-experience']}
           onPropertyChange={this.props.onPropertyChange}
           onResponsibilityChange={this.props.onResponsibilityChange}
+          addNewExperienceEntry={this.props.addNewExperienceEntry}
         />
         <MainContentSectionForm
           title="Educational History"

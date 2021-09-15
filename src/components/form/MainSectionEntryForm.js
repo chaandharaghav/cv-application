@@ -51,11 +51,11 @@ class MainSectionEntryForm extends react.Component {
           </ul>
           <div>
             <button
-              className="remove-experience-button"
+              className="remove-item-button"
               id={this.props.id}
               onClick={this.props.deleteEntry}
             >
-              -
+              Remove item
             </button>
           </div>
         </div>

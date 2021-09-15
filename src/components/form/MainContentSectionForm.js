@@ -18,7 +18,7 @@ class MainContentSectionForm extends react.Component {
         ))}
 
         <button
-          className="add-experience-button"
+          className="add-item-button"
           onClick={this.props.addNewEntry}
         >{`Add ${
           this.props.title === 'Work Experience' ? 'experience' : 'education'

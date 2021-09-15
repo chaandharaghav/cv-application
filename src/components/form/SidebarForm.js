@@ -15,6 +15,8 @@ class SidebarForm extends react.Component {
           details={this.props.skills}
           onSkillChange={this.props.onSkillChange}
           onProficiencyChange={this.props.onProficiencyChange}
+          addNewSkillEntry={this.props.addNewSkillEntry}
+          deleteSkillEntry={this.props.deleteSkillEntry}
         />
         <SidebarSectionForm
           title="Achievements"

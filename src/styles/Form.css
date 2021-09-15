@@ -34,6 +34,9 @@ input[type='text'] {
 /* Skill div styles */
 
 .skill-div {
+  display: flex;
+  flex-direction: column;
+
   margin-bottom: 1rem;
 }
 
@@ -51,4 +54,46 @@ input[type='text'] {
 }
 .skill-div > div input {
   width: 60%;
+}
+
+/* Button styles */
+
+.add-item-button,
+.remove-item-button {
+  width: 100%;
+
+  border: 0;
+  border-radius: 5px;
+  padding: 0.6rem;
+  margin: 1rem 0;
+}
+
+.add-item-button {
+  background-color: #82bcff;
+}
+.add-item-button:active {
+  background-color: hsl(212, 100%, 65%);
+}
+
+.remove-item-button {
+  background-color: rgb(255, 170, 170);
+}
+.remove-item-button:active {
+  background-color: hsl(0, 100%, 73%);
+}
+
+@media (min-width: 1024px) {
+  .add-item-button:hover {
+    background-color: hsl(212, 100%, 65%);
+  }
+
+  .remove-item-button:hover {
+    background-color: hsl(0, 100%, 73%);
+  }
+}
+
+.skill-div .remove-item-button {
+  max-width: 100px;
+
+  align-self: center;
 }

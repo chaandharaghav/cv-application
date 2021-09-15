@@ -53,8 +53,21 @@ class SidebarSectionForm extends react.Component {
                   onChange={this.props.onProficiencyChange}
                 />
               </div>
+              <button
+                className="remove-item-button"
+                id={skill.id}
+                onClick={this.props.deleteSkillEntry}
+              >
+                Remove item
+              </button>
             </div>
           ))}
+          <button
+            className="add-item-button"
+            onClick={this.props.addNewSkillEntry}
+          >
+            Add skill
+          </button>
         </div>
       );
     } else {

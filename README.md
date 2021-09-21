@@ -1,4 +1,4 @@
-# etch-a-sketch
+# cv-application
 CV Creator using React JS
 
 What I learned
